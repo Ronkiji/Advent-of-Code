@@ -43,15 +43,15 @@ while True:
     move = d[(move, inputs[cur[0]][cur[1]])]
     distance += 1
 
-part2 = 0
+inside = 0
 
 for y in range(ysize):
-    inside = False
+    enter = False
     for x in range(xsize):
-        p = (y, x)
         c = inputs[y][x]
-        if p in loop and (c == '|' or c == '7' or c == 'F'):
-            inside = not inside
-        part2 += p not in loop and inside
+        if (y, x) in loop and (c == '|' or c == '7' or c == 'F'):
+            enter = not enter
+        if (y, x) not in loop and enter:
+            inside += 1
 
-print(part2)
+print(inside)
