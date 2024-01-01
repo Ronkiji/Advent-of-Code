@@ -1,23 +1,21 @@
 # empty lines cannot be cast as ints or anyhting else, hence from the inputs, cast int
 
 # stores list of ints in 'inputs'
-inputs = [int(line.rstrip('\n')) for line in open("inputs/09.txt")]
+inputs = [int(line.rstrip('\n')) for line in open("inputs/23.txt")]
 
 # 001000010101
 # 010010111110
 # 001010110111
 
-
 # stores list of strings in 'inputs'
-inputs = [line.rstrip('\n') for line in open("inputs/10.txt")]
+inputs = [line.rstrip('\n') for line in open("inputs/23.txt")]
 
 # one
 # two
 # three
 
-
 # stores list of tuples (key, val) in 'inputs'
-parse = [(line.rstrip('\n')) for line in open("inputs/10.txt")]
+parse = [(line.rstrip('\n')) for line in open("inputs/23.txt")]
 inputs = [[key, int(val)] for key, val in (line.split(" ") for line in parse)]
 
 # forward 1
@@ -25,7 +23,7 @@ inputs = [[key, int(val)] for key, val in (line.split(" ") for line in parse)]
 # down 5
 
 # stores list of single variables in 'inputs'
-parse = [(line.rstrip('\n')) for line in open("10.txt")]
+parse = [(line.rstrip('\n')) for line in open("23.txt")]
 inputs = [int(num) for num in input[0].split(",")]
 
 #1101,1,29,67,1102,0,1,65,1008,65,35,66,1005,66,28,1,67,65
@@ -53,7 +51,6 @@ def dfs(graph, start, visited=None):
         dfs(graph, next, visited)
     return visited
 
-
 graph = {'0': set(['1', '2']),
          '1': set(['0', '3', '4']),
          '2': set(['0']),
@@ -76,5 +73,3 @@ ops = {
 }
 
 op = lambda x, y, o: eval(x + o + y)
-
-
